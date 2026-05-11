@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BONABOLA · Reporte Email Marketing · Abril – Mayo 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mona+Sans:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:        #0A1018;
+    --bg-2:      #0F1622;
+    --card:      #121A28;
+    --card-2:    #161F2E;
+    --line:      rgba(255,255,255,.06);
+    --line-2:    rgba(255,255,255,.10);
+    --text:      #E6EAF2;
+    --text-dim:  #8A93A6;
+    --text-mute: #5E677A;
+
+    --green:     #3DE5A5;
+    --green-soft:rgba(61,229,165,.12);
+    --green-ln:  rgba(61,229,165,.35);
+
+    --orange:    #F59E5F;
+    --orange-soft:rgba(245,158,95,.10);
+    --orange-ln: rgba(245,158,95,.40);
+
+    --red:       #F26D6D;
+    --red-soft:  rgba(242,109,109,.10);
+
+    --purple:    #A78BFA;
+    --yellow:    #F2C84B;
+    --magenta:   #EC4899;
+
+    --font-display: 'Mona Sans', system-ui, sans-serif;
+    --font-body:    'Inter', system-ui, sans-serif;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+
+  /* ---------- TOP BAR (sticky brand) ---------- */
+  .topbar{
+    position: sticky; top:0; z-index: 50;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 22px 5vw;
+    background: rgba(10,16,24,.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  .topbar__brand{
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: .32em;
+    color: #fff;
+  }
+  .pill{
+    display:inline-flex; align-items:center; gap:8px;
+    padding: 8px 16px;
+    border: 1px solid var(--green-ln);
+    border-radius: 999px;
+    font-size: 12px;
+    letter-spacing: .04em;
+    color: var(--green);
+    background: var(--green-soft);
+    font-weight: 500;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{ padding: 100px 5vw 80px; position: relative; overflow: hidden; }
+  .hero__eyebrow{
+    display:inline-block;
+    color: var(--green);
+    font-size: 12px;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 36px;
+  }
+  .hero__title{
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(56px, 9vw, 132px);
+    line-height: .92;
+    letter-spacing: -.025em;
+    color: var(--text);
+  }
+  .hero__title .accent{
+    color: var(--green);
+    display: block;
+  }
+  .hero__lead{
+    margin-top: 36px;
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--text-dim);
+    max-width: 720px;
+  }
+
+  .meta-grid{
+    margin-top: 70px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    max-width: 1100px;
+  }
+  .meta-card{
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 22px 24px;
+  }
+  .meta-card__label{
+    font-size: 11px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--text-mute);
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+  .meta-card__value{
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 1.2;
+    letter-spacing: -.01em;
+    color: var(--text);
+  }
+
+  /* ---------- SECTION SCAFFOLD ---------- */
+  section{
+    padding: 90px 5vw;
+    border-top: 1px solid var(--line);
+  }
+  .sect-num{
+    color: var(--green);
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: .08em;
+    margin-bottom: 20px;
+  }
+  .sect-title{
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(38px, 5.5vw, 76px);
+    line-height: .98;
+    letter-spacing: -.022em;
+    color: var(--text);
+    max-width: 1200px;
+  }
+  .sect-lead{
+    margin-top: 32px;
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--text-dim);
+    max-width: 820px;
+  }
+  .sect-lead b{ color: var(--text); font-weight: 500 }
+
+  /* ---------- KPI CARDS ---------- */
+  .kpi-grid{
+    margin-top: 56px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+  }
+  .kpi{
+    position: relative;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 26px 24px 24px;
+    overflow: hidden;
+  }
+  .kpi::before{
+    content:"";
+    position: absolute; left: 16px; right: 16px; top: 0;
+    height: 2px; border-radius: 0 0 2px 2px;
+    background: var(--green);
+  }
+  .kpi--orange::before{ background: var(--orange) }
+  .kpi--purple::before{ background: var(--purple) }
+  .kpi--yellow::before{ background: var(--yellow) }
+  .kpi--red::before   { background: var(--red) }
+  .kpi--magenta::before{ background: var(--magenta) }
+
+  .kpi__label{
+    font-size: 11px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--text-mute);
+    font-weight: 500;
+    margin-bottom: 18px;
+  }
+  .kpi__value{
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 52px;
+    line-height: 1;
+    letter-spacing: -.025em;
+    color: var(--text);
+    margin-bottom: 14px;
+  }
+  .kpi__value small{
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--text-dim);
+    letter-spacing: 0;
+    margin-left: 2px;
+  }
+  .kpi__sub{
+    font-size: 13px;
+    color: var(--text-dim);
+    line-height: 1.55;
+    margin-bottom: 16px;
+  }
+  .kpi__sub b{ color: var(--text); font-weight: 500 }
+
+  .badge{
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: .01em;
+  }
+  .badge--good{ background: var(--green-soft); color: var(--green) }
+  .badge--bad { background: var(--red-soft);   color: var(--red) }
+  .badge--warn{ background: var(--orange-soft);color: var(--orange) }
+  .badge--neutral{ background: rgba(255,255,255,.05); color: var(--text-dim) }
+  .badge .arr{ font-size: 11px }
+
+  /* ---------- DATA TABLE ---------- */
+  .data-wrap{
+    margin-top: 48px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 8px 0;
+    overflow-x: auto;
+  }
+  .data{
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  .data thead th{
+    text-align: left;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--text-mute);
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--line);
+    white-space: nowrap;
+  }
+  .data tbody td{
+    padding: 22px 24px;
+    border-bottom: 1px solid var(--line);
+    vertical-align: middle;
+  }
+  .data tbody tr:last-child td{ border-bottom: none }
+  .data .name{
+    font-weight: 500;
+    color: var(--text);
+    font-size: 15px;
+  }
+  .data .meta{
+    font-size: 12px;
+    color: var(--text-mute);
+    margin-top: 4px;
+  }
+  .data .num{
+    font-variant-numeric: tabular-nums;
+    color: var(--text);
+    font-weight: 500;
+  }
+  .data .num small{ color: var(--text-mute); font-size: 12px; font-weight: 400 }
+
+  /* ---------- INSIGHT BAR ---------- */
+  .insights{
+    margin-top: 48px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+  .insight{
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 28px 26px;
+    position: relative;
+    overflow: hidden;
+  }
+  .insight::before{
+    content:"";
+    position: absolute; left: 0; top: 26px; bottom: 26px;
+    width: 2px;
+    background: var(--green);
+  }
+  .insight--warn::before{ background: var(--orange) }
+  .insight--bad::before { background: var(--red) }
+
+  .insight__num{
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: .18em;
+    color: var(--green);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .insight--warn .insight__num{ color: var(--orange) }
+  .insight--bad  .insight__num{ color: var(--red) }
+  .insight__title{
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.35;
+    color: var(--text);
+    margin-bottom: 14px;
+    letter-spacing: -.005em;
+  }
+  .insight__body{
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text-dim);
+  }
+
+  /* ---------- ALERT-BANNER ---------- */
+  .banner{
+    margin-top: 36px;
+    padding: 26px 32px;
+    border-radius: 16px;
+    border: 1px solid var(--green-ln);
+    background: linear-gradient(180deg, var(--green-soft), transparent 80%);
+    display: flex; gap: 24px; align-items: flex-start;
+  }
+  .banner--warn{
+    border-color: var(--orange-ln);
+    background: linear-gradient(180deg, var(--orange-soft), transparent 80%);
+  }
+  .banner__tag{
+    flex: 0 0 auto;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: .04em;
+    color: var(--green);
+    padding-top: 2px;
+  }
+  .banner--warn .banner__tag{ color: var(--orange) }
+  .banner__text{
+    color: var(--text-dim);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  .banner__text b{ color: var(--text); font-weight: 500 }
+
+  /* ---------- DELIVERABILITY BARS ---------- */
+  .deliv{
+    margin-top: 56px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+  .deliv__card{
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 28px 26px;
+  }
+  .deliv__label{
+    font-size: 11px; letter-spacing: .18em; text-transform: uppercase;
+    color: var(--text-mute); font-weight: 500;
+    margin-bottom: 18px;
+  }
+  .deliv__value{
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 48px;
+    line-height: 1;
+    letter-spacing: -.025em;
+    margin-bottom: 20px;
+  }
+  .deliv__value small{ font-size: 22px; color: var(--text-dim); margin-left: 2px }
+  .deliv__bar{
+    position: relative;
+    height: 6px;
+    background: rgba(255,255,255,.06);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 14px;
+  }
+  .deliv__bar > span{
+    position: absolute; left: 0; top: 0; bottom: 0;
+    background: var(--green);
+    border-radius: 3px;
+  }
+  .deliv__bar--neutral > span{ background: var(--text-dim) }
+  .deliv__sub{ font-size: 13px; color: var(--text-dim); line-height: 1.55 }
+
+  /* ---------- ACTIONS ---------- */
+  .actions{
+    margin-top: 48px;
+    list-style: none;
+    display: grid;
+    gap: 12px;
+    counter-reset: act;
+  }
+  .actions li{
+    counter-increment: act;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 28px 30px;
+    display: grid;
+    grid-template-columns: 80px 1fr 200px;
+    gap: 32px;
+    align-items: start;
+  }
+  .actions li::before{
+    content: counter(act, decimal-leading-zero);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 32px;
+    color: var(--green);
+    letter-spacing: -.02em;
+    line-height: 1;
+  }
+  .act__title{
+    font-weight: 600;
+    font-size: 17px;
+    color: var(--text);
+    margin-bottom: 10px;
+    line-height: 1.4;
+    letter-spacing: -.005em;
+  }
+  .act__body{
+    font-size: 14px;
+    color: var(--text-dim);
+    line-height: 1.7;
+  }
+  .act__meta{
+    text-align: right;
+    font-size: 11px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--text-mute);
+    padding-top: 6px;
+    font-weight: 500;
+  }
+  .act__meta b{
+    display: block;
+    margin-top: 6px;
+    color: var(--green);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: .02em;
+    text-transform: none;
+  }
+  .act__meta.high b   { color: var(--orange) }
+  .act__meta.medium b { color: var(--text-dim) }
+
+  /* ---------- QUOTE ---------- */
+  .quote-wrap{
+    padding: 110px 5vw;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    background: linear-gradient(180deg, var(--bg-2), var(--bg));
+  }
+  .quote{
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(28px, 3.8vw, 48px);
+    line-height: 1.25;
+    letter-spacing: -.02em;
+    color: var(--text);
+    max-width: 1100px;
+  }
+  .quote em{
+    font-style: normal;
+    color: var(--green);
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer.foot{
+    padding: 80px 5vw 70px;
+    border-top: 1px solid var(--line);
+  }
+  .foot__row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 24px;
+    align-items: end;
+    font-size: 12px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--text-mute);
+  }
+  .foot__brand{
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: .32em;
+    font-size: 16px;
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 1100px){
+    .kpi-grid{ grid-template-columns: repeat(2, 1fr) }
+    .meta-grid{ grid-template-columns: repeat(2, 1fr) }
+    .insights, .deliv{ grid-template-columns: 1fr }
+    .actions li{ grid-template-columns: 60px 1fr; }
+    .act__meta{ grid-column: 2; text-align: left }
+    .data thead{ display: none }
+    .data tbody td{ display: block; padding: 6px 24px; border: none }
+    .data tbody tr{ display: block; padding: 22px 0; border-bottom: 1px solid var(--line) }
+    .data tbody tr:last-child{ border-bottom: none }
+    .kpi__value{ font-size: 42px }
+  }
+  @media (max-width: 640px){
+    section{ padding: 70px 5vw }
+    .hero{ padding: 70px 5vw 60px }
+    .hero__title{ font-size: 56px }
+    .kpi-grid{ grid-template-columns: 1fr }
+    .meta-grid{ grid-template-columns: 1fr }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ TOPBAR ============ -->
+<div class="topbar">
+  <div class="topbar__brand">B O N A B O L A</div>
+  <div class="pill">Mayo 2026 · Email Marketing · Klaviyo</div>
+</div>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <span class="hero__eyebrow">Navy Marketing · Reporte de rendimiento</span>
+  <h1 class="hero__title">
+    Email Marketing
+    <span class="accent">Abril – Mayo 2026</span>
+  </h1>
+  <p class="hero__lead">
+    Primer ciclo de activación del canal email. Construcción inicial
+    de la base, despliegue de flujos automatizados en Klaviyo y primeras
+    campañas con foco en marca y producto.
+  </p>
+
+  <div class="meta-grid">
+    <div class="meta-card">
+      <div class="meta-card__label">Periodo</div>
+      <div class="meta-card__value">10 Feb – 11 May 2026</div>
+    </div>
+    <div class="meta-card">
+      <div class="meta-card__label">Plataforma</div>
+      <div class="meta-card__value">Klaviyo</div>
+    </div>
+    <div class="meta-card">
+      <div class="meta-card__label">Mercado</div>
+      <div class="meta-card__value">España 🇪🇸</div>
+    </div>
+    <div class="meta-card">
+      <div class="meta-card__label">Fase</div>
+      <div class="meta-card__value">Activación de canal</div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ 01. RESUMEN EJECUTIVO ============ -->
+<section>
+  <div class="sect-num">01 · Resumen Ejecutivo</div>
+  <h2 class="sect-title">Visión global del periodo</h2>
+  <p class="sect-lead">
+    El periodo registra <b>198 destinatarios únicos</b> impactados entre campañas y flujos.
+    La capacidad de entrega es sólida y limpia. Las dos primeras newsletters
+    obtienen métricas de apertura por encima del estándar del sector,
+    pero las conversiones atribuidas todavía son cero. La prioridad del
+    próximo ciclo es activar el segundo punto de captación en la web,
+    optimizar el flujo de carrito abandonado y empezar a segmentar la base activa.
+  </p>
+
+  <!-- KPI ROW 1 -->
+  <div class="kpi-grid">
+    <div class="kpi">
+      <div class="kpi__label">Destinatarios totales</div>
+      <div class="kpi__value">198</div>
+      <div class="kpi__sub">Campañas y flujos · primer periodo con tráfico</div>
+      <span class="badge badge--good"><span class="arr">▲</span> Primer ciclo</span>
+    </div>
+    <div class="kpi kpi--purple">
+      <div class="kpi__label">Apertura · Campañas</div>
+      <div class="kpi__value">52,34<small>%</small></div>
+      <div class="kpi__sub">Benchmark sector: <b>30 – 35 %</b></div>
+      <span class="badge badge--good"><span class="arr">▲</span> Bueno</span>
+    </div>
+    <div class="kpi kpi--yellow">
+      <div class="kpi__label">Clic · Campañas</div>
+      <div class="kpi__value">3,13<small>%</small></div>
+      <div class="kpi__sub">Benchmark sector: <b>1 – 2 %</b></div>
+      <span class="badge badge--good"><span class="arr">▲</span> Excelente</span>
+    </div>
+    <div class="kpi kpi--red">
+      <div class="kpi__label">Conversiones atribuidas</div>
+      <div class="kpi__value">0</div>
+      <div class="kpi__sub">Pendiente de cerrar primer ciclo</div>
+      <span class="badge badge--neutral">— sin variación</span>
+    </div>
+  </div>
+
+  <!-- KPI ROW 2 -->
+  <div class="kpi-grid">
+    <div class="kpi kpi--orange">
+      <div class="kpi__label">Apertura · Flujos</div>
+      <div class="kpi__value">35,82<small>%</small></div>
+      <div class="kpi__sub">Arrastrado por Carrito abandonado</div>
+      <span class="badge badge--warn"><span class="arr">▼</span> A mejorar</span>
+    </div>
+    <div class="kpi kpi--orange">
+      <div class="kpi__label">Clic · Flujos</div>
+      <div class="kpi__value">2,99<small>%</small></div>
+      <div class="kpi__sub">Faltan CTAs claros en los emails</div>
+      <span class="badge badge--warn"><span class="arr">▼</span> A mejorar</span>
+    </div>
+    <div class="kpi">
+      <div class="kpi__label">Rebote</div>
+      <div class="kpi__value">1,52<small>%</small></div>
+      <div class="kpi__sub">Lista limpia · sin spam traps</div>
+      <span class="badge badge--good">✓ Sano</span>
+    </div>
+    <div class="kpi kpi--magenta">
+      <div class="kpi__label">Bajas</div>
+      <div class="kpi__value">1,03<small>%</small></div>
+      <div class="kpi__sub">A vigilar tras aumentar frecuencia</div>
+      <span class="badge badge--neutral">Aceptable</span>
+    </div>
+  </div>
+
+  <div class="banner">
+    <div class="banner__tag">✓ Lo bueno</div>
+    <div class="banner__text">
+      Las primeras campañas validan el interés de la base.
+      <b>Newsletter 2 (Palas)</b> obtiene 55,88 % de apertura y 4,41 % de CTR — un patrón
+      que confirma que la audiencia activa quiere ver producto y proceso, no manifiestos
+      de marca aislados. La lista es pequeña pero está caliente.
+    </div>
+  </div>
+
+  <div class="banner banner--warn">
+    <div class="banner__tag">▲ Lo que vigilar</div>
+    <div class="banner__text">
+      Los flujos automatizados todavía no convierten. El <b>Carrito abandonado</b>
+      registra 15,38 % de apertura y 0 % de clic en 26 destinatarios. El sistema
+      de envío funciona, pero el copy y los asuntos no recogen el valor diferencial
+      de Bonabola (artesanía, Made in Spain, personalización). Aquí está la palanca.
+    </div>
+  </div>
+</section>
+
+<!-- ============ 02. CAMPAÑAS ============ -->
+<section>
+  <div class="sect-num">02 · Campañas Enviadas</div>
+  <h2 class="sect-title">Dos newsletters,<br>dos lecturas distintas</h2>
+  <p class="sect-lead">
+    <b>Newsletter 1</b> abrió el canal con un mensaje de marca.
+    <b>Newsletter 2</b> fue la primera con foco producto (palas) y mejoró
+    en lectura y en clic. Es la señal que esperábamos: la base se interesa
+    cuando se le habla del producto y del proceso.
+  </p>
+
+  <div class="data-wrap">
+    <table class="data">
+      <thead>
+        <tr>
+          <th>Campaña</th>
+          <th>Fecha</th>
+          <th class="num">Dest.</th>
+          <th class="num">Entregado</th>
+          <th class="num">Aperturas</th>
+          <th class="num">Clics</th>
+          <th>Lectura</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="name">Newsletter 2 — Palas</div>
+            <div class="meta">Foco producto · proceso artesanal</div>
+          </td>
+          <td><span class="num">7 may · 18:00</span></td>
+          <td class="num">68</td>
+          <td class="num">68</td>
+          <td class="num">38 <small>· 55,88 %</small></td>
+          <td class="num">3 <small>· 4,41 %</small></td>
+          <td><span class="badge badge--good">Buen rendimiento</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="name">Newsletter 1 — Introducción</div>
+            <div class="meta">Bienvenida · presentación de marca</div>
+          </td>
+          <td><span class="num">23 abr · 17:00</span></td>
+          <td class="num">63</td>
+          <td class="num">60</td>
+          <td class="num">29 <small>· 48,33 %</small></td>
+          <td class="num">1 <small>· 1,67 %</small></td>
+          <td><span class="badge badge--neutral">Apertura alta · clic bajo</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="insights" style="grid-template-columns: 1fr 1fr">
+    <div class="insight">
+      <div class="insight__num">Lectura A</div>
+      <div class="insight__title">El producto convierte la curiosidad en clic.</div>
+      <div class="insight__body">
+        La Newsletter 2, centrada en las palas y el proceso artesanal,
+        multiplica por <b style="color:var(--green)">2,6×</b> la tasa de clic de la primera.
+        Confirmación de que la audiencia activa quiere ver producto contextualizado.
+      </div>
+    </div>
+    <div class="insight">
+      <div class="insight__num">Lectura B</div>
+      <div class="insight__title">La base es pequeña pero está caliente.</div>
+      <div class="insight__body">
+        Con 60 – 68 entregas por envío y aperturas por encima del <b>48 %</b>,
+        la lista está limpia y atenta. El reto del próximo periodo no es
+        retener; es hacerla crecer manteniendo la calidad del contacto.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03. FLUJOS ============ -->
+<section>
+  <div class="sect-num">03 · Flujos Automatizados</div>
+  <h2 class="sect-title">Cinco flujos en Klaviyo,<br>tres en funcionamiento</h2>
+  <p class="sect-lead">
+    Tres de los cinco flujos están operativos y generando datos.
+    El flujo <b>NEWSLETTER — 10 % descuento</b> está construido y listo, pero
+    todavía no se ha integrado el formulario en la web, por lo que aún
+    no recibe contactos. <b>VIP Clients</b> no ha tenido tráfico porque todavía
+    no hay clientes recurrentes en la base. <b>POP UP — 10 % descuento</b> es,
+    por volumen y apertura, el flujo más activo del periodo.
+  </p>
+
+  <div class="data-wrap">
+    <table class="data">
+      <thead>
+        <tr>
+          <th>Flujo</th>
+          <th>Estado</th>
+          <th class="num">Activos</th>
+          <th class="num">Entregado</th>
+          <th class="num">Aperturas</th>
+          <th class="num">Clics</th>
+          <th>Diagnóstico</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="name">POP UP — 10 % descuento</div>
+            <div class="meta">Captación de leads desde pop-up web</div>
+          </td>
+          <td><span class="badge badge--good">Live</span></td>
+          <td class="num">3 / 3</td>
+          <td class="num">29</td>
+          <td class="num">12 <small>· ~41 %</small></td>
+          <td class="num">0 <small>· 0 %</small></td>
+          <td><span class="badge badge--warn">Lee · no clica</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="name">Abandono de navegación</div>
+            <div class="meta">Visita producto sin añadir al carrito</div>
+          </td>
+          <td><span class="badge badge--good">Live</span></td>
+          <td class="num">2 / 2</td>
+          <td class="num">12</td>
+          <td class="num">8 <small>· 66,67 %</small></td>
+          <td class="num">2 <small>· 16,67 %</small></td>
+          <td><span class="badge badge--good">Mejor flujo del periodo</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="name">Carrito abandonado</div>
+            <div class="meta">Email 3 todavía en borrador</div>
+          </td>
+          <td><span class="badge badge--good">Live</span></td>
+          <td class="num">2 / 3</td>
+          <td class="num">26</td>
+          <td class="num">4 <small>· 15,38 %</small></td>
+          <td class="num">0 <small>· 0 %</small></td>
+          <td><span class="badge badge--bad">Asunto y copy a revisar</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="name">NEWSLETTER — 10 % descuento</div>
+            <div class="meta">Misma función que el POP UP · pendiente integración</div>
+          </td>
+          <td><span class="badge badge--good">Live</span></td>
+          <td class="num">2 / 2</td>
+          <td class="num">0</td>
+          <td class="num">—</td>
+          <td class="num">—</td>
+          <td><span class="badge badge--neutral">Pendiente activar en web</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="name">VIP Clients</div>
+            <div class="meta">Activación tras primera recompra</div>
+          </td>
+          <td><span class="badge badge--good">Live</span></td>
+          <td class="num">2 / 2</td>
+          <td class="num">0</td>
+          <td class="num">—</td>
+          <td class="num">—</td>
+          <td><span class="badge badge--neutral">A la espera de recurrencia</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="insights">
+    <div class="insight">
+      <div class="insight__num">Hallazgo 01</div>
+      <div class="insight__title">Abandono de navegación es la joya del sistema.</div>
+      <div class="insight__body">
+        <b style="color:var(--green)">66,67 %</b> de apertura y
+        <b style="color:var(--green)">16,67 %</b> de clic en los dos emails del flujo.
+        Eso sí — el Email 2 registra 16,67 % de bajas, una señal de que el
+        segundo recordatorio puede percibirse como insistente.
+      </div>
+    </div>
+    <div class="insight insight--warn">
+      <div class="insight__num">Hallazgo 02</div>
+      <div class="insight__title">El POP UP capta pero no convierte el clic.</div>
+      <div class="insight__body">
+        29 entregas totales con aperturas entre el 33 % y el 50 % a lo largo
+        de la secuencia: la audiencia entra y abre los tres correos. Pero
+        ninguno registra clic. El cupón del 10 % no está consiguiendo movilizar.
+      </div>
+    </div>
+    <div class="insight">
+      <div class="insight__num">Hallazgo 03</div>
+      <div class="insight__title">Próximo paso: activar el flujo NEWSLETTER.</div>
+      <div class="insight__body">
+        El flujo NEWSLETTER — 10 % descuento está construido y operativo en
+        Klaviyo. Una vez integrado el formulario en la web, complementará al POP UP
+        y duplicará los puntos de entrada a la base.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04. SALUD DEL CANAL ============ -->
+<section>
+  <div class="sect-num">04 · Salud del Canal</div>
+  <h2 class="sect-title">Entregabilidad sólida<br>sobre la que escalar</h2>
+  <p class="sect-lead">
+    Sobre 198 destinatarios, el canal mantiene métricas técnicas excelentes:
+    rebote bajo, cero spam, bajas controladas. Es la base sobre la que
+    se puede empezar a escalar frecuencia y volumen sin penalizar reputación.
+  </p>
+
+  <div class="deliv">
+    <div class="deliv__card">
+      <div class="deliv__label">Rebote</div>
+      <div class="deliv__value" style="color:var(--green)">1,52<small>%</small></div>
+      <div class="deliv__bar"><span style="width:38%"></span></div>
+      <div class="deliv__sub">Por debajo del 2 % recomendado. Lista limpia.</div>
+    </div>
+    <div class="deliv__card">
+      <div class="deliv__label">Spam</div>
+      <div class="deliv__value" style="color:var(--green)">0,00<small>%</small></div>
+      <div class="deliv__bar"><span style="width:2%"></span></div>
+      <div class="deliv__sub">Sin quejas. Reputación de dominio intacta.</div>
+    </div>
+    <div class="deliv__card">
+      <div class="deliv__label">Bajas</div>
+      <div class="deliv__value">1,03<small>%</small></div>
+      <div class="deliv__bar deliv__bar--neutral"><span style="width:34%"></span></div>
+      <div class="deliv__sub">Aceptable. A vigilar al aumentar frecuencia.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ QUOTE ============ -->
+<section class="quote-wrap">
+  <p class="quote">
+    Una marca premium no se construye con descuentos.
+    Se construye con criterio. <em>Los datos del periodo confirman
+    que la audiencia abre cuando le hablamos de producto y proceso —
+    y deja de hacerlo cuando percibe presión comercial sin contexto.</em>
+  </p>
+</section>
+
+<!-- ============ 05. PLAN DE ACCIÓN ============ -->
+<section>
+  <div class="sect-num">05 · Plan para el siguiente periodo</div>
+  <h2 class="sect-title">Cinco acciones<br>prioritarias para Junio</h2>
+  <p class="sect-lead">
+    Ordenadas por impacto sobre el funnel. El foco del próximo ciclo es
+    convertir las aperturas en clic, completar las secuencias pendientes
+    y empezar a segmentar la base activa.
+  </p>
+
+  <ul class="actions">
+    <li>
+      <div>
+        <div class="act__title">Activar el formulario del flujo NEWSLETTER en la web.</div>
+        <div class="act__body">
+          El flujo está construido y operativo en Klaviyo, pero todavía no
+          se ha integrado el formulario de captación en la web. Una vez
+          activado, abrirá un segundo punto de entrada a la base junto al POP UP.
+        </div>
+      </div>
+      <div class="act__meta high">Prioridad<b>Alta</b></div>
+    </li>
+    <li>
+      <div>
+        <div class="act__title">Rediseñar el contenido del flujo de Carrito abandonado.</div>
+        <div class="act__body">
+          15,38 % de apertura y 0 % de clic en 26 entregas. Reescribir asuntos
+          y copy en línea con marca. Email 1 a 1h (sin presión).
+          Email 2 a 24h (proceso artesanal y por qué este precio).
+          Email 3 — actualmente en borrador — completar a 72h con recomendación
+          basada en la pala configurada.
+        </div>
+      </div>
+      <div class="act__meta high">Prioridad<b>Alta</b></div>
+    </li>
+    <li>
+      <div>
+        <div class="act__title">Reforzar el CTA del flujo POP UP — 10 % descuento.</div>
+        <div class="act__body">
+          Aperturas saludables (33 – 50 %) pero 0 % de clic en los tres emails.
+          La audiencia abre y se va. Revisar visibilidad del cupón, una sola CTA
+          dominante por email, y testear cambio de incentivo: en lugar de descuento,
+          ofrecer acceso al configurador con asesoramiento personalizado.
+        </div>
+      </div>
+      <div class="act__meta high">Prioridad<b>Alta</b></div>
+    </li>
+    <li>
+      <div>
+        <div class="act__title">Suavizar el Email 2 del flujo Abandono de navegación.</div>
+        <div class="act__body">
+          El flujo funciona, pero el Email 2 registra 16,67 % de bajas: el segundo
+          recordatorio se percibe como insistente. Ampliar el delay entre Email 1
+          y Email 2 (de 24h a 48 – 72h) y reescribir el asunto en clave de criterio,
+          no de urgencia.
+        </div>
+      </div>
+      <div class="act__meta medium">Prioridad<b>Media</b></div>
+    </li>
+    <li>
+      <div>
+        <div class="act__title">Pasar la newsletter a cadencia semanal y empezar a segmentar.</div>
+        <div class="act__body">
+          Una newsletter por semana, alternando narrativa de marca y foco
+          producto (Newsletter 2 marca el patrón). El aumento de frecuencia
+          permite mantener la marca presente sin perder calidad de contacto.
+          En paralelo, crear los primeros segmentos: engaged 30d, interesados
+          en personalización, jugadores vs clubs.
+        </div>
+      </div>
+      <div class="act__meta medium">Prioridad<b>Media</b></div>
+    </li>
+  </ul>
+</section>
+
+<!-- ============ 06. OBJETIVOS ============ -->
+<section>
+  <div class="sect-num">06 · Objetivos del próximo periodo</div>
+  <h2 class="sect-title">Junio 2026<br><span style="color:var(--green)">números a batir</span></h2>
+  <p class="sect-lead">
+    Objetivos realistas, calibrados sobre la base actual y sobre las
+    acciones previstas. El foco del periodo es subir el rendimiento
+    de los flujos y empezar a ver las primeras señales de conversión
+    atribuida al canal.
+  </p>
+
+  <div class="kpi-grid">
+    <div class="kpi">
+      <div class="kpi__label">Apertura · Flujos</div>
+      <div class="kpi__value">≥ 45<small>%</small></div>
+      <div class="kpi__sub">Actual <b>35,82 %</b></div>
+      <span class="badge badge--good"><span class="arr">▲</span> +9 pts</span>
+    </div>
+    <div class="kpi kpi--purple">
+      <div class="kpi__label">Clic · Flujos</div>
+      <div class="kpi__value">≥ 5<small>%</small></div>
+      <div class="kpi__sub">Actual <b>2,99 %</b></div>
+      <span class="badge badge--good"><span class="arr">▲</span> +2 pts</span>
+    </div>
+    <div class="kpi kpi--yellow">
+      <div class="kpi__label">Conversiones atribuidas</div>
+      <div class="kpi__value">&gt; 0</div>
+      <div class="kpi__sub">Primeras señales del canal</div>
+      <span class="badge badge--neutral">Primer hito</span>
+    </div>
+    <div class="kpi kpi--magenta">
+      <div class="kpi__label">Base activa</div>
+      <div class="kpi__value">+50<small>%</small></div>
+      <div class="kpi__sub">Captación vía configurador y pop-up</div>
+      <span class="badge badge--good"><span class="arr">▲</span> Crecimiento</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="foot">
+  <div class="foot__row">
+    <div class="foot__brand">B O N A B O L A</div>
+    <div>www.bonabola.com</div>
+    <div>Navy Marketing · 05 / 2026</div>
+  </div>
+</footer>
+
+</body>
+</html>
